@@ -31,6 +31,7 @@ public class MessageServiceImpl implements MessageService {
 		// msg.getMsgType()把不同类型的消息放入不同通道。
 		inMessageTemplate.convertAndSend("kemao_3_" + msg.getMsgType(), msg);
 
+		LOG.trace("转换后的消息对象已经放入队列中");
 		// 返回的信息先不管
 		return null;
 	}
